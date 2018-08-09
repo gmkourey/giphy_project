@@ -1,0 +1,10 @@
+.buttons {
+    margin-left:20px;
+}
+.gif-images {
+    margin:20px;
+}
+.gif-images:hover {
+    cursor:pointer;
+    border: 5px solid lightseagreen; 
+}
