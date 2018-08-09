@@ -1,13 +1,6 @@
 .buttons {
     margin-left:20px;
 }
-.gif-images {
-    margin:20px;
-}
-.gif-images:hover {
-    cursor:pointer;
-    border: 5px solid lightseagreen; 
-}
 .buttons {
     background-color: rgb(25, 171, 228);
     color:white;
@@ -16,14 +9,46 @@
     border:none;
     border-radius:5px;
     padding:15px 30px;
+    margin:10px;
 }
 .buttons:hover {
     background-color:rgb(25, 228, 176);
     cursor:pointer;
 }
-#buttonDiv {
+.buttons:focus {
+    background-color:rgb(25, 228, 176);
+    cursor:pointer;
+}
+#buttonContainer {
     text-align:center;
 }
-.buttons:nth-child(1) {
-    margin-left:0px;
+#user-input {
+    widows: 100px;
+    display:inline-block;
+}
+#submit {
+    background-color: rgb(25, 171, 228);
+    padding:10px 20px;
+    color:white;
+    border:none;
+    border-radius:5px;
+    margin-left:10px;
+}
+#submit:hover {
+    background-color:rgb(25, 228, 176);
+    cursor:pointer;  
+}
+form {
+    text-align:center;
+    margin:25px auto 20px auto;
+}
+.gifDiv {
+    float:left;
+    margin:15px;
+    text-align: center;
+}
+.gifDiv:hover {
+    border: 5px solid teal;
+    margin:10px;
+    cursor:pointer;
 }

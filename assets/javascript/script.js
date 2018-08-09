@@ -5,14 +5,12 @@ var newGifs;
 var gifIndex;
 
 function createButtons() {
-    var newDiv = $('<div>');
-    newDiv.attr('id', 'buttonDiv');
-    $('.container').prepend(newDiv);
+    $('#buttonContainer').empty()
     for(var i = 0; i < topics.length; i++) {
         var newButton = $('<button>');
         newButton.text(topics[i]);
         newButton.attr('class', 'buttons');
-        $('#buttonDiv').append(newButton);
+        $('#buttonContainer').append(newButton);
     }
 }
 
@@ -21,7 +19,7 @@ function addOption() {
     var newButton = $('<button>');
     newButton.attr('class', 'buttons');
     newButton.text(userInput);
-    $('#buttonDiv').append(newButton);
+    $('#buttonContainer').append(newButton);
 
 }
 createButtons();
@@ -36,24 +34,37 @@ $(document).on('click', '.buttons', function() {
     }).then(function(response) {
         searchedArray = response;
         for(var i = 0; i < response.data.length; i++) {
+            var newDiv = $('<div>');
+            newDiv.attr('id', 'gifDiv' + i);
+            newDiv.attr('class', 'gifDiv');
+            newDiv.attr('data-index', i);
+            $('#gifs').append(newDiv);
             newGifs = $('<img>');
             newGifs.attr('src', response.data[i].images.fixed_height_still.url);
             newGifs.attr('class', 'gif-images');
-            newGifs.attr('data-index', i);
             newGifs.attr('id', 'gif' + i);
-            $('#gifs').append(newGifs);
+            $('#gifDiv' + i).append(newGifs);
+            newRating = $('<p>');
+            newRating.text('GIF Rating: ' + ((response.data[i].rating).toUpperCase()));
+            newRating.attr('class', 'rating');
+            $('#gifDiv' + i).append(newRating);
             }
         });
 });
 
-$(document).on('click', '.gif-images',  function() {
+$(document).on('click', '.gifDiv',  function() {
     gifIndex = $(this).attr('data-index');
     console.log(gifIndex);
     $('#gif' + gifIndex).attr('src', searchedArray.data[gifIndex].images.fixed_height.url);
 
 });
 
-$('#submit').on('click', function() {
-    addOption();
+$('#submit').on('click', function(event) {
+    if($('#user-input').val() !== '') {
+    topics.push($('#user-input').val().trim());
+    createButtons();
+}
+event.preventDefault();
+$('#user-input').val('');
 });
 
