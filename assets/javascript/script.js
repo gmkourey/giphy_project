@@ -87,7 +87,7 @@ $('#user-input').val('');
 
 $('#more-gifs').on('click', function() {
     numOfGifs += 10;
-    var searchURL = "http://api.giphy.com/v1/gifs/search?q=" + searchTopic + "&api_key=Do8Pj3iCmTJPnLtNeHPOBcekhoZ5JwSW&limit=" + numOfGifs + '"';
+    var searchURL = "https://api.giphy.com/v1/gifs/search?q=" + searchTopic + "&api_key=Do8Pj3iCmTJPnLtNeHPOBcekhoZ5JwSW&limit=" + numOfGifs + '"';
     $('#gifs').empty();
     $('#more-gifs').css('display', 'inline-block');
     $.ajax({
@@ -131,6 +131,7 @@ $(document).on('click', '.favorites', function () {
 $('#viewFavorites').on('click', function() {
     $('#gifs').empty();
     $('#moregifs').css('display', 'none');
+    if(favoritesArr.length > 0) {
     favoritesArr = JSON.parse(localStorage.getItem('array'));
     for(var i = 0; i < favoritesArr.length; i++) {
         var newDiv = $('<div>');
@@ -146,5 +147,11 @@ $('#viewFavorites').on('click', function() {
         newRating.attr('class', 'rating');
         $('#gifDiv' + i).append(newRating);
     }
+} else {
+    var noGIF = $('<p>');
+    noGIF.text('There are currently no GIF\'s in your favorites');
+    noGIF.css({'text-align': 'center','font-size': '30px'})
+    $('#gifs').append(noGIF);
+}
 });
 
