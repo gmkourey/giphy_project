@@ -10,15 +10,24 @@ integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLP
 </head>
 <body>
     <div class="container">
+        <h2 class="heading">Pick Your GIF Topic</h2>
         <div id="buttonContainer">
         </div>
         <form>
+            <h2 class="heading">Or Add Another...</h2>
             <input type='text' class="form-control col-md-3" size="40" id="user-input">
             <input type='submit' value='Add Option' id='submit'>
         </form>
+        <div id="favoritesButton">
+        <button type="button" id="viewFavorites">View My Favorites</button>
+        <p>Favorites will be saved</p>
+    </div>
             <div id="gifs">
 
             </div>
+            <div id="moregifs">
+            <button type="button" id="more-gifs">See More</button>
+            </div>  
     </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>

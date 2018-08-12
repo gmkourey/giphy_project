@@ -1,5 +1,14 @@
-.buttons {
-    margin-left:20px;
+body {
+    background-image: url('../images/connectwork.png');
+}
+.container {
+    background-color: rgba(256,256,256,.85);
+    height:100%;
+    min-height: 100vh;
+}
+.heading {
+    text-align:center;
+    color:black;
 }
 .buttons {
     background-color: rgb(25, 171, 228);
@@ -26,6 +35,20 @@
     widows: 100px;
     display:inline-block;
 }
+#more-gifs {
+    display:none;
+    background-color: rgb(25, 171, 228);
+    padding:10px 20px;
+    color:white;
+    border:none;
+    border-radius:5px;
+    margin-left:10px;
+}
+#more-gifs:hover    {
+        background-color:rgb(25, 228, 176);
+        cursor:pointer;
+}
+
 #submit {
     background-color: rgb(25, 171, 228);
     padding:10px 20px;
@@ -38,12 +61,42 @@
     background-color:rgb(25, 228, 176);
     cursor:pointer;  
 }
+.favorites {
+    background-color: rgb(25, 171, 228);
+    padding:10px 20px;
+    color:white;
+    border:none;
+    border-radius:5px;
+    margin-left:10px;
+}
+.favorites:hover {
+    background-color:rgb(25, 228, 176);
+    cursor:pointer; 
+}
+#favoritesButton {
+    width:200px;
+    margin: 0 auto;
+    text-align:center;
+}
+#viewFavorites {
+    background-color: #cc0000;
+    padding:10px 20px;
+    color:white;
+    border:none;
+    border-radius:5px;
+    width:200px;
+    margin: 0 auto;
+}
+#viewFavorites:hover {
+    background-color:#7f0000;
+    cursor:pointer; 
+}
 form {
     text-align:center;
-    margin:25px auto 20px auto;
+    margin:15px auto 20px auto;
 }
 .gifDiv {
-    float:left;
+    display:inline-block;
     margin:15px;
     text-align: center;
 }
@@ -51,4 +104,7 @@ form {
     border: 5px solid teal;
     margin:10px;
     cursor:pointer;
+}
+#moregifs {
+    text-align:center;
 }
