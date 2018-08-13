@@ -131,8 +131,11 @@ $(document).on('click', '.favorites', function () {
 $('#viewFavorites').on('click', function() {
     $('#gifs').empty();
     $('#moregifs').css('display', 'none');
-    if(favoritesArr.length > 0) {
     favoritesArr = JSON.parse(localStorage.getItem('array'));
+if(!Array.isArray(favoritesArr)) {
+    favoritesArr = [];
+}
+    if(favoritesArr.length > 0) {
     for(var i = 0; i < favoritesArr.length; i++) {
         var newDiv = $('<div>');
         newDiv.attr('id', 'gifDiv' + i);
