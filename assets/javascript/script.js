@@ -34,7 +34,7 @@ function addOption() {
 function createGifs() {
     numOfGifs = 10;
     searchTopic = $(this).text();
-    var searchURL = "http://api.giphy.com/v1/gifs/search?q=" + searchTopic + '&api_key=Do8Pj3iCmTJPnLtNeHPOBcekhoZ5JwSW&limit=' + numOfGifs;
+    var searchURL = "https://api.giphy.com/v1/gifs/search?q=" + searchTopic + '&api_key=Do8Pj3iCmTJPnLtNeHPOBcekhoZ5JwSW&limit=' + numOfGifs;
     $('#gifs').empty();
     $('#more-gifs').css('display', 'inline-block');
     $.ajax({
